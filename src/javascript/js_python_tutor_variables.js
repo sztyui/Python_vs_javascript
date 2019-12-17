@@ -38,9 +38,51 @@
 // var myNAME = "Chris";
 // console.log(myname);
 
-var myName = "Chris"
-var amCrhis = (myName === "Chris") ? true : false;
-var amINull;
+// var myName = "Chris"
+// var amCrhis = (myName === "Chris") ? true : false;
+// var amINull;
 
-console.log(amCrhis);
-console.log(amINull);
+// console.log(amCrhis);
+// console.log(amINull);
+
+// var myName = "Bob";
+
+// function sayName(){
+//     var myName = "Chris";
+//     console.log(myName);
+// }
+
+// console.log(myName);
+// sayName();
+// console.log(myName);
+
+// var isStarted = false;
+// var _123 = '123';
+// console.log(_123);
+
+// sayNewName = function(){
+//     var _myName = 'Isti';
+//     console.log(myName);
+// }
+
+// sayNewName();
+
+// var myName = 'Isti';
+// var anotherName = myName;
+// var yetAnotherName = anotherName;
+// console.log(myName);
+// console.log(anotherName);
+// console.log(yetAnotherName);
+
+function sayHi(shouldSayHi){
+    if(shouldSayHi){
+        var myName = "Isti";
+        console.log(`Hi ${myName}!`);
+    }
+    else {
+        console.log("Goodbye nameless!");
+    }
+}
+
+sayHi(1);
+sayHi(0);
