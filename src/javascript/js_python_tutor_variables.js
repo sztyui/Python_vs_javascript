@@ -74,15 +74,18 @@
 // console.log(anotherName);
 // console.log(yetAnotherName);
 
-function sayHi(shouldSayHi){
-    if(shouldSayHi){
+function sayHi(){
+    var shouldSayHi = true;
+    var reallySayHi = true;
+
+    if (shouldSayHi){
         var myName = "Isti";
-        console.log(`Hi ${myName}!`);
+
+        if (reallySayHi) {
+            var myLastName = "Szilágyi";
+        }
     }
-    else {
-        console.log("Goodbye nameless!");
-    }
+    console.log(`Hi ${myName} ${myLastName}!`);
 }
 
-sayHi(1);
-sayHi(0);
+sayHi();
