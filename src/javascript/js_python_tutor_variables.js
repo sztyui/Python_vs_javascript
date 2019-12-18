@@ -74,18 +74,36 @@
 // console.log(anotherName);
 // console.log(yetAnotherName);
 
+// function sayHi(){
+//     let shouldSayHi = false;
+//     let myName;
+
+//     if (shouldSayHi){
+//         myName = "Isti";
+//         console.log(`Hi ${myName}!`);
+//     }
+//     else {
+//         myName = "Bob";
+//         console.log(`Hi ${myName}!`);
+//     }
+// }
+
+// sayHi();
+
+// const myArray = [1, 2, 3];
+// myArray.push(1);
+// myArray.pop()
+// console.log(myArray);
+
+// const myObject = {name: "Chris"};
+// console.log(myObject);
+// myObject.name = "Bob";
+// console.log(myObject);
+
 function sayHi(){
-    var shouldSayHi = true;
-    var reallySayHi = true;
-
-    if (shouldSayHi){
-        var myName = "Isti";
-
-        if (reallySayHi) {
-            var myLastName = "Szilágyi";
-        }
+    if(true){
+        const myName = "Jim";
     }
-    console.log(`Hi ${myName} ${myLastName}!`);
+    console.log(myName);
 }
-
 sayHi();
