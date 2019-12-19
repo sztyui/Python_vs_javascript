@@ -102,3 +102,25 @@ else if (taxApplied === bankAccountBalance) {
 else {
     alert('Erre már nincs pénzed csóró!');
 }
+
+if (bankAccountBalance >= costOfItem) {
+    console.log("Balance ok! Checking tax");
+    if (tax >= .50) {
+        console.log("Tax amount too high! " + tax);
+    }
+    if (100 === 100) {
+        console.log('Aaaaaah!!!');
+    }
+
+}
+
+let myExampleFunction = function(a, b) {
+    if (a === b){
+        return `${a} egyenlő ${b}-vel.`
+    }
+    return `${a} ` + ((a > b) ? "nagyobb" : "kisebb") + ` mint ${b}.`;
+}
+
+console.log(myExampleFunction(1,2));
+console.log(myExampleFunction(3,2));
+console.log(myExampleFunction(2,2));
