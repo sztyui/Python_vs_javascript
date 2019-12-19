@@ -1,2 +1,7 @@
 .vscode/*
 .vscode
+
+*.pyc
+*.pyw
+__pycache__
+__pycache__/*

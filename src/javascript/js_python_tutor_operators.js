@@ -88,16 +88,18 @@ function ok(s){
 // console.log(myObject, '==', myOtherObject, myObject == myOtherObject);
 
 const bankAccountBalance = 123;
-const costOfItem = 122;
+const costOfItem = 151;
 const tax = 0.50;
-
 const taxApplied = costOfItem + tax;
+const canSpendMoney = true;
+const hasCreditCard = true;
+const creditLimit = 200;
 
 if (taxApplied < bankAccountBalance) {
-    ok('Megvetted az árut cigány!');
+    ok('Megvetted az árut!!');
 }
 else if (taxApplied === bankAccountBalance) {
-    warning('Erre még éppen volt pénzed te roma!');
+    warning('Erre még éppen volt pénzed!');
 }
 else {
     alert('Erre már nincs pénzed csóró!');
@@ -124,3 +126,11 @@ let myExampleFunction = function(a, b) {
 console.log(myExampleFunction(1,2));
 console.log(myExampleFunction(3,2));
 console.log(myExampleFunction(2,2));
+
+if (bankAccountBalance >= costOfItem
+    || hasCreditCard && creditLimit >= costOfItem) {
+    ok("Megveheted az árut!");
+}
+else {
+    alert("Vagy a lóvé fogyott el, vagy nem vásárolhatsz ma már!");
+}
