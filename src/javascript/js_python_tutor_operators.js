@@ -87,50 +87,76 @@ function ok(s){
 
 // console.log(myObject, '==', myOtherObject, myObject == myOtherObject);
 
-const bankAccountBalance = 123;
-const costOfItem = 151;
-const tax = 0.50;
-const taxApplied = costOfItem + tax;
-const canSpendMoney = true;
-const hasCreditCard = true;
-const creditLimit = 200;
+// const bankAccountBalance = 123;
+// const costOfItem = 151;
+// const tax = 0.50;
+// const taxApplied = costOfItem + tax;
+// const canSpendMoney = true;
+// const hasCreditCard = true;
+// const creditLimit = 200;
 
-if (taxApplied < bankAccountBalance) {
-    ok('Megvetted az árut!!');
+// if (taxApplied < bankAccountBalance) {
+//     ok('Megvetted az árut!!');
+// }
+// else if (taxApplied === bankAccountBalance) {
+//     warning('Erre még éppen volt pénzed!');
+// }
+// else {
+//     alert('Erre már nincs pénzed csóró!');
+// }
+
+// if (bankAccountBalance >= costOfItem) {
+//     console.log("Balance ok! Checking tax");
+//     if (tax >= .50) {
+//         console.log("Tax amount too high! " + tax);
+//     }
+//     if (100 === 100) {
+//         console.log('Aaaaaah!!!');
+//     }
+
+// }
+
+// let myExampleFunction = function(a, b) {
+//     if (a === b){
+//         return `${a} egyenlő ${b}-vel.`
+//     }
+//     return `${a} ` + ((a > b) ? "nagyobb" : "kisebb") + ` mint ${b}.`;
+// }
+
+// console.log(myExampleFunction(1,2));
+// console.log(myExampleFunction(3,2));
+// console.log(myExampleFunction(2,2));
+
+// if (bankAccountBalance >= costOfItem
+//     || hasCreditCard && creditLimit >= costOfItem) {
+//     ok("Megveheted az árut!");
+// }
+// else {
+//     alert("Vagy a lóvé fogyott el, vagy nem vásárolhatsz ma már!");
+// }
+
+const bankAccountBalance = 1000,
+      costOfItem = 123,
+      hasCreditCard = true,
+      hasNotReachedCreditLimit = true;
+
+let myName = "Isti";
+
+if (hasNotReachedCreditLimit) {
+    ok('Még vásárolhatsz!');
+    alert(!hasNotReachedCreditLimit);
 }
-else if (taxApplied === bankAccountBalance) {
-    warning('Erre még éppen volt pénzed!');
-}
-else {
-    alert('Erre már nincs pénzed csóró!');
-}
+
+
+var no = new Boolean(false);
+const hasReachedCreditLimit = no;
 
 if (bankAccountBalance >= costOfItem) {
-    console.log("Balance ok! Checking tax");
-    if (tax >= .50) {
-        console.log("Tax amount too high! " + tax);
+        console.log("Congrats! You can pay this with cash! :)");
+} else {
+    if(hasCreditCard && !hasReachedCreditLimit){
+        console.log("Congrats! You can pay for this width credit!");
+    } else {
+        console.log("Sorry, Can't afford. :(");
     }
-    if (100 === 100) {
-        console.log('Aaaaaah!!!');
-    }
-
-}
-
-let myExampleFunction = function(a, b) {
-    if (a === b){
-        return `${a} egyenlő ${b}-vel.`
-    }
-    return `${a} ` + ((a > b) ? "nagyobb" : "kisebb") + ` mint ${b}.`;
-}
-
-console.log(myExampleFunction(1,2));
-console.log(myExampleFunction(3,2));
-console.log(myExampleFunction(2,2));
-
-if (bankAccountBalance >= costOfItem
-    || hasCreditCard && creditLimit >= costOfItem) {
-    ok("Megveheted az árut!");
-}
-else {
-    alert("Vagy a lóvé fogyott el, vagy nem vásárolhatsz ma már!");
 }
