@@ -105,8 +105,27 @@ function squareAndMultiply(num1, num2){
 
 const first = squareAndMultiply(4,4);
 const second = squareAndMultiply(10,2);
-const third = squareAndMultiply("Hello","kiraly");
 
 console.log(first);
 console.log(second);
-console.log(third);
+
+
+function personFormatter(firstName, lastName, age){
+    function formatNames(arg1, arg2){
+        return arg1 + " " + arg2;
+    };
+    const formattedName = formatNames(firstName, lastName)
+    function dataFormatter(fullName, num){
+        var d = new Date();
+        const formattedData = {
+            name: fullName,
+            age: num,
+            dayOfBirth: d.setFullYear(d.getFullYear() - num )
+        };
+        return formattedData;
+    }
+    return dataFormatter(formattedName, age);
+}
+
+
+console.log(personFormatter("Miccs", "Bjúkennen", 29));
