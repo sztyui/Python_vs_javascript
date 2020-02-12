@@ -129,3 +129,31 @@ function personFormatter(firstName, lastName, age){
 
 
 console.log(personFormatter("Miccs", "Bjúkennen", 29));
+
+var sayHi = () => {
+    console.log("Hi, I'am using arrow function!");
+}
+
+sayHi();
+
+const multiplier = (num1, num2) => {
+    return num1 * num2;
+}
+
+console.log(multiplier(5, 10));
+
+const users = [
+    {name: "Chris", age: 60},
+    {name: "Jane", age: 30},
+    {name: "Billy", age: 45}
+]
+
+function mapUserNames(myArr){
+    const userNameList = myArr.map((user) => {
+        return user.name;
+    });
+    return userNameList;
+}
+
+
+console.log(mapUserNames(users));
