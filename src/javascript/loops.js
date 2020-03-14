@@ -7,18 +7,21 @@ const range = (start, end) => {
 }
 
 let x = 1, akt = 1, row = 26, jel = '*';
-szorzo = (row - akt)/2;
-while(szorzo > 0){
+let szorzo = (row - akt)/2;
+do {
     ures = ' '.repeat(szorzo);
     teli = jel.repeat(akt);
     console.log(`${ures}${teli}`);
     akt += 2;
     szorzo = (row - akt)/2;
     x += 1;
-}
-lab = (row - 3)/2;
-for(_ in range(0,2)){
-    ures = ' '.repeat(lab);
-    teli = jel.repeat(3);
-    console.log(`${ures}${teli}`);
-}
+    if(szorzo < 0){
+        let lab = (row - 3)/2;
+        for(_ in range(0,2)){
+            ures = ' '.repeat(lab);
+            teli = jel.repeat(3);
+            console.log(`${ures}${teli}`);
+        }
+        break;
+    }
+} while(szorzo > 0);
