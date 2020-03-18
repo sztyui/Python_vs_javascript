@@ -1,1 +1,7 @@
-document.getElementById("identifier").innerHTML = "<h1>We all</h1>";
+const myAppDiv = document.getElementById("app");
+const specialWords = myAppDiv.getElementsByTagName("span");
+
+
+for(const span of specialWords){
+    span.innerText = "Fox";
+}
