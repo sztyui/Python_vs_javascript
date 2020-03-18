@@ -1,7 +1,11 @@
 const myAppDiv = document.getElementById("app");
-const specialWords = myAppDiv.getElementsByTagName("span");
+const specialWords = myAppDiv.getElementsByTagName("p");
 
-
-for(const span of specialWords){
-    span.innerText = "Fox";
+let sum = 0;
+for(const i of specialWords){
+    sum += parseInt(i.innerText);
 }
+console.log(sum);
+document.getElementById("result").innerText = sum;
+
+document.getElementById("changed").innerText = specialWords.length;
