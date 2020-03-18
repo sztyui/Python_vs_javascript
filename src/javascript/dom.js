@@ -12,7 +12,6 @@ const elsoaldozas = function(){
     
 }
 
-Array.prototype.forEach.call(myTag, function(element){
-    console.log(element.innerHTML);
-});
-
+for(const p of myTag){
+    console.log(p.innerHTML);
+}
