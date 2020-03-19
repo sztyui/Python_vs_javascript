@@ -2,4 +2,10 @@ const dummyDiv = document.querySelector(".dummy span");
 
 const testDiv = document.getElementById("test");
 
-console.log(testDiv.childNodes[0]);
+const element = document.getElementById('footer');
+
+const elementId = element.id;
+
+const replacementID= "bottom";
+
+element.id = replacementID;
