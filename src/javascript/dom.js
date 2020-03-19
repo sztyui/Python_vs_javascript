@@ -1,3 +1,5 @@
 const dummyDiv = document.querySelector(".dummy span");
 
-dummyDiv.parentNode.style.background = "teal";
+const testDiv = document.getElementById("test");
+
+console.log(testDiv.childNodes[0]);
