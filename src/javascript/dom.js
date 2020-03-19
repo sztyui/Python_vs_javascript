@@ -1,11 +1,3 @@
-const myAppDiv = document.getElementById("app");
-const specialWords = myAppDiv.getElementsByTagName("p");
+const dummyDiv = document.querySelector(".dummy span");
 
-let sum = 0;
-for(const i of specialWords){
-    sum += parseInt(i.innerText);
-}
-console.log(sum);
-document.getElementById("result").innerText = sum;
-
-document.getElementById("changed").innerText = specialWords.length;
+dummyDiv.parentNode.style.background = "teal";
