@@ -29,13 +29,22 @@ buttonToClick.addEventListener("focusout", logEvent);
 document.addEventListener("click", logEvent);
 
 const bckgrnd = document.getElementById("background");
+const listItemsUL = bckgrnd.querySelector('UL');
+const allLIs = bckgrnd.querySelectorAll('LI');
 
 const switchBackground = (e) => {
     const hasBeenClicked = bckgrnd.contains(e.target);
     hasBeenClicked ? bckgrnd.classList.add("background-color1") : bckgrnd.classList.remove("background-color1");
 };
 
-document.addEventListener("click", switchBackground);
+const addGreenBackground = (e) => {
+    const targetLI = e.target;
+    const green = bckgrnd.querySelector(".green");
+    if(green){
+        green.classList.remove("green");
+    }
+    targetLI.classList.toggle("green");
+};
 
-bckgrnd.addEventListener("mousedown", switchBackground);
-bckgrnd.addEventListener("focusout", switchBackground);
+document.addEventListener("click", switchBackground);
+listItemsUL.addEventListener("click", addGreenBackground);
