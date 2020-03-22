@@ -10,14 +10,14 @@ const clicksDiv = document.getElementById("numberOfClicks");
 const buttonToClick = document.getElementById("clickButton");
 const scrollDiv = document.getElementById("numberOfScrolls");
 
-buttonToClick.addEventListener("click", function(){
+buttonToClick.addEventListener("click", function () {
     numberOfClicks += 1;
     clicksDiv.innerText = numberOfClicks;
     buttonToClick.innerText = "Plz no click. :(";
     buttonToClick.removeEventListener("click", logEvent);
 });
 
-scrollDiv.addEventListener("scroll", function(){
+scrollDiv.addEventListener("scroll", function () {
     numberOfScrolls += 1;
     scrollDiv.innerText = String(numberOfScrolls);
 });
@@ -38,9 +38,13 @@ const switchBackground = (e) => {
 };
 
 const addGreenBackground = (e) => {
+    e.stopPropagation();
     const targetLI = e.target;
+    if (targetLI.nodeName === "UL") {
+        return;
+    }
     const green = bckgrnd.querySelector(".green");
-    if(green){
+    if (green) {
         green.classList.remove("green");
     }
     targetLI.classList.toggle("green");
@@ -48,3 +52,12 @@ const addGreenBackground = (e) => {
 
 document.addEventListener("click", switchBackground);
 listItemsUL.addEventListener("click", addGreenBackground);
+
+const bckgrnd2 = document.getElementById("background2");
+const allLISs2 = bckgrnd2.querySelectorAll("li");
+
+for(const prop of allLISs2){
+    prop.addEventListener("click", event => {
+        console.log(this);
+    });
+}
