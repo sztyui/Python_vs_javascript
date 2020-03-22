@@ -1,11 +1,27 @@
-const dummyDiv = document.querySelector(".dummy span");
 
-const testDiv = document.getElementById("test");
+// const el = document.getElementsByTagName("div");
+// const footerDiv = el[el.length - 1];
+// footerDiv.id = "footer";
 
-const element = document.getElementById('footer');
+const dummyDiv = document.getElementsByClassName('test-class');
+console.log(dummyDiv[0].className);
 
-const elementId = element.id;
+const purpleDivs = document.querySelectorAll('.purple');
+for(const prop of purpleDivs){
+    prop.classList.add("foo");
+}
 
-const replacementID= "bottom";
+setInterval(function () {
+    for (const prop of purpleDivs) {
+        prop.classList.toggle("foo");
+    }
+}, 5000);
 
-element.id = replacementID;
+const foot = document.getElementById("footer");
+foot.classList.add("foo");
+
+const creationDiv = document.getElementById('created');
+const newElement = document.createElement("P");
+newElement.innerText = "Valami pelda szöveg.";
+console.log(newElement);
+creationDiv.appendChild(newElement);

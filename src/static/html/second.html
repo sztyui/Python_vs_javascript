@@ -24,12 +24,23 @@
             color:chartreuse;
             font-size: smaller;
         }
+        .purple {
+            color: blueviolet;
+            font-size: 25px;
+            background-color: purple;
+            height: 100px;
+            width: 100px;
+        }
+        .foo {
+            border-radius: 50%;
+        }
     </style>
     <body>
         <div>I should not be colored green 😓</div>
-        <div id="test" class="dummy">some <span id="d">dummy</span> text</div>
+        <div id="test" class="dummy purple">some <span class="test-class">dummy</span> text</div>
         <div class="dummy">Even more <span>dummy</span> text :D!</div>
-        <div id="footer"></div>
+        <div id="footer" class="purple"></div>
+        <div id="created"></div>
         <script src="../../javascript/dom.js"></script>
     </body>
 </html>
