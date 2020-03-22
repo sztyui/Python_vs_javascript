@@ -25,3 +25,12 @@ const newElement = document.createElement("P");
 newElement.innerText = "Valami pelda szöveg.";
 console.log(newElement);
 creationDiv.appendChild(newElement);
+
+let allatok = ["kutya", "cica", "birka", "kecske", "17 kilós ronda BAKNYÚL"];
+const ul = document.createElement("ul");
+for(const allat of allatok){
+    let newAllat = document.createElement("li");
+    newAllat.innerText = allat;
+    ul.appendChild(newAllat);
+}
+creationDiv.appendChild(ul);
