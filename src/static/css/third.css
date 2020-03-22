@@ -1,0 +1,17 @@
+.background-color1 {
+    background: orange;
+    border: 1px solid black;
+    text-align: left;
+}
+
+.background-color2 {
+    background-color: green;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.background-color3 {
+    background-color:red;
+    border: 1px solid black;
+    text-align: right;
+}

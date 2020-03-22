@@ -27,3 +27,15 @@ buttonToClick.addEventListener("focus", logEvent);
 buttonToClick.addEventListener("focusout", logEvent);
 
 document.addEventListener("click", logEvent);
+
+const bckgrnd = document.getElementById("background");
+
+const switchBackground = (e) => {
+    const hasBeenClicked = bckgrnd.contains(e.target);
+    hasBeenClicked ? bckgrnd.classList.add("background-color1") : bckgrnd.classList.remove("background-color1");
+};
+
+document.addEventListener("click", switchBackground);
+
+bckgrnd.addEventListener("mousedown", switchBackground);
+bckgrnd.addEventListener("focusout", switchBackground);
