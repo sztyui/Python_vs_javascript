@@ -24,3 +24,39 @@ const myOtherNewList = `
 `;
 
 myDiv.innerHTML = myDiv.innerHTML + myOtherNewList;
+
+const first = "Sally";
+const last = "Smith";
+const age = 52;
+
+let greeting = `Hello ${first} ${last}! I am ${age} year(s) old.`;
+const ageDiv = document.getElementById("ageDiv");
+const para = document.createElement("P");
+para.innerText = greeting;
+ageDiv.appendChild(para);
+
+const isTrue = true;
+console.log(`Is true? ${isTrue === true}`);
+
+const dateNow = new Date();
+const localeDate = dateNow.toLocaleString();
+console.log(`Today's is: ${dateNow.toLocaleString()}`);
+
+const myArray = [1, 2, 3, 4, 5];
+console.log(`Your array powed: ${myArray.map((num)=>{
+    return num ** 2;
+})}`);
+
+const pizzaToppings = ["cheese", "mushrooms", "sauce", "pepproni", "pineapple"];
+const myPizzaDiv = `<ul>${pizzaToppings.map((stuff)=>{
+    return `<li>${stuff}</li>`
+}).join('\n')}</ul>`
+document.getElementById("pizzaDiv").innerHTML = myPizzaDiv;
+
+
+function templateParser(arrayOfStrings, expression1, expression2){
+    console.log(`${arrayOfStrings}, ${expression1}, ${expression2}`);
+}
+
+const person = "Chris", personAge = 21;
+const myTemplateLiteral = templateParser`I am ${person}. I am ${personAge} year(s) old.`;
