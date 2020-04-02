@@ -116,4 +116,66 @@ console.log(Customer.sayCustomerNames(customer1, customer2, customer3));
 Customer.transferBalance(customer2, customer1, 25);
 console.log(customer1.showCredit());
 console.log(customer2.showCredit());
-Customer.transferBalance(customer2, customer1, 10);
+
+class FamilyMember {
+    constructor(lastName, firstName, relationship){
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.relationship = relationship;
+    }
+
+    sayFamilyName(){
+        console.log(`We are the ${this.lastName}s!`)
+    }
+}
+
+class FamilyGroup {
+    constructor(parents){
+        this.parents = parents;
+        this.children = [];
+    }
+
+    addMember(member){
+        this.children.push(member);
+    }
+}
+
+const dad = new FamilyMember("Smith", "Bill", "Father");
+const mum = new FamilyMember("Smith", "Catherine", "Mother");
+const annie = new FamilyMember("Smith", "Annie", "daughter");
+const will = new FamilyMember("Smith", "Will", "son");
+const theSmiths = new FamilyGroup([dad, mum]);
+theSmiths.addMember(annie);
+theSmiths.addMember(will);
+console.log(theSmiths);
+
+// class Family {
+//     constructor(lastName){
+//         this.lastName = lastName;
+//     }
+
+//     sayFamilyName(){
+//         console.log(`We are the ${this.lastName}s!`)
+//     }
+// }
+
+// class Parents extends Family {
+//     constructor(lastName, firstName){
+//         super(lastName);
+//         this.firstName = firstName;
+//     }
+// }
+
+// class Child extends Family {
+//     constructor(lastName, firstName){
+//         super(lastName);
+//         this.firstName = firstName;
+//     }
+// }
+
+// const dad = new Parents("Smith", "George");
+// const mum = new Parents("Smith", "Patty");
+// const jimmy = new Child("Smith", "Jimmy");
+
+// const dad = new FamilyMember("Smith", "Bill", "Father");
+// const annie = new FamilyMember("Smith", "Bill", "daughter");
