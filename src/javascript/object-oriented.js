@@ -78,7 +78,7 @@ Animal.prototype.introduce = function() {
 }
 
 Animal.prototype.makeNoise = function(){
-    return `Generic animal noise.`;
+    return `Generic animal noise from ${this.name}`;
 }
 
 function Dog(name, age, breed){
@@ -90,10 +90,38 @@ function Dog(name, age, breed){
 Dog.prototype = Object.create(Animal.prototype);
 Dog.prototype.constructor = Dog;
 Dog.prototype.makeNoise = function () {
-    return "bark, bark wooof!";
+    return `${this.name}: bark, bark wooof!`;
 }
 
-console.log(Dog.prototype);
-const barky = new Dog("Barky", 1, "Chihuahua");
-console.log(barky.makeNoise());
+function Cat(name, age, coloration){
+    Animal.call(this, name, age);
+    this.coloration = coloration;
+}
+Cat.prototype = Object.create(Animal.prototype);
+Cat.prototype.constructor = Cat;
+Cat.prototype.scratchPost = function () {
+    if(this instanceof Kitten){
+        return `${this.name} has scratched the post`;
+    } else {
+        return `${this.name} has almost destroyed the post`;
+    }
+}
 
+function Kitten(name, age, coloration, litter) {
+    Cat.call(this, name, age, coloration);
+    this.litter = litter;
+}
+Kitten.prototype = Object.create(Cat.prototype);
+Kitten.prototype.constructor = Kitten;
+
+
+const barky = new Dog("Barky", 1, "Chihuahua");
+const kitty = new Cat("Kitty", 3, "tabby");
+const tinyKitty = new Kitten("Spot", 0.3, "orange", 1);
+
+console.log(kitty.makeNoise());
+console.log(kitty.scratchPost());
+console.log(tinyKitty.scratchPost());
+console.log(barky.makeNoise())
+
+console.log(tinyKitty instanceof Animal);
