@@ -125,3 +125,4 @@ console.log(tinyKitty.scratchPost());
 console.log(barky.makeNoise())
 
 console.log(tinyKitty instanceof Animal);
+
