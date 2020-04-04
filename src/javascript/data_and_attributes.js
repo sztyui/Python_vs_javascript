@@ -80,11 +80,7 @@ function showUnpopulated(){
 function highlight(e){
     const { value } = e.target;
     for(const prop of allPlanetDivs){
-        if(prop.dataset.population == value){
-            prop.style.background = "teal";
-        } else {
-            prop.style.background = null;
-        }
+        prop.dataset.population == value ? prop.classList.add("teal") : prop.classList.remove("teal");
     }
 }
 
