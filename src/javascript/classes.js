@@ -33,6 +33,37 @@
 // const bob = new Person("Bob", 30);
 // console.log(Person.prototype);
 
+// class Family {
+//     constructor(lastName){
+//         this.lastName = lastName;
+//     }
+
+//     sayFamilyName(){
+//         console.log(`We are the ${this.lastName}s!`)
+//     }
+// }
+
+// class Parents extends Family {
+//     constructor(lastName, firstName){
+//         super(lastName);
+//         this.firstName = firstName;
+//     }
+// }
+
+// class Child extends Family {
+//     constructor(lastName, firstName){
+//         super(lastName);
+//         this.firstName = firstName;
+//     }
+// }
+
+// const dad = new Parents("Smith", "George");
+// const mum = new Parents("Smith", "Patty");
+// const jimmy = new Child("Smith", "Jimmy");
+
+// const dad = new FamilyMember("Smith", "Bill", "Father");
+// const annie = new FamilyMember("Smith", "Bill", "daughter");
+
 class Person{
     constructor(name, age){
         this.name = name;
@@ -130,52 +161,55 @@ class FamilyMember {
 }
 
 class FamilyGroup {
-    constructor(parents){
+    constructor(parents=[], children=[]){
         this.parents = parents;
-        this.children = [];
+        this.children = children;
     }
 
     addMember(member){
         this.children.push(member);
     }
+
 }
 
-const dad = new FamilyMember("Smith", "Bill", "Father");
-const mum = new FamilyMember("Smith", "Catherine", "Mother");
-const annie = new FamilyMember("Smith", "Annie", "daughter");
-const will = new FamilyMember("Smith", "Will", "son");
-const theSmiths = new FamilyGroup([dad, mum]);
-theSmiths.addMember(annie);
-theSmiths.addMember(will);
+const smithFamily = {
+    1: ["Smith", "Bill", "father"],
+    2: ["Smith", "Catherine", "mother"],
+    3: ["Smith", "Annie", "daughter"],
+    4: ["Smith", "Will", "son"],
+}
+
+const createFamilyGroup = (famArray) => {
+    const famGroup = new FamilyGroup();
+    for(const prop of famArray){
+        if(prop.relationship === "father" || prop.relationship === "mother"){
+            famGroup.parents.push(prop);
+        }
+        else {
+            famGroup.children.push(prop);
+        }
+    }
+    console.log(famGroup);
+    return famGroup;
+}
+
+const createFamilyMembers = (famObj) => {
+    const allMembers = [];
+    for(const prop in famObj){
+        const [last, first, relationship] = famObj[prop];
+        allMembers.push(new FamilyMember(last, first, relationship));
+    }
+    return createFamilyGroup(allMembers);
+}
+
+const theSmiths = createFamilyMembers(smithFamily);
 console.log(theSmiths);
 
-// class Family {
-//     constructor(lastName){
-//         this.lastName = lastName;
-//     }
-
-//     sayFamilyName(){
-//         console.log(`We are the ${this.lastName}s!`)
-//     }
-// }
-
-// class Parents extends Family {
-//     constructor(lastName, firstName){
-//         super(lastName);
-//         this.firstName = firstName;
-//     }
-// }
-
-// class Child extends Family {
-//     constructor(lastName, firstName){
-//         super(lastName);
-//         this.firstName = firstName;
-//     }
-// }
-
-// const dad = new Parents("Smith", "George");
-// const mum = new Parents("Smith", "Patty");
-// const jimmy = new Child("Smith", "Jimmy");
-
 // const dad = new FamilyMember("Smith", "Bill", "Father");
-// const annie = new FamilyMember("Smith", "Bill", "daughter");
+// const mum = new FamilyMember("Smith", "Catherine", "Mother");
+// const annie = new FamilyMember("Smith", "Annie", "daughter");
+// const will = new FamilyMember("Smith", "Will", "son");
+// const theSmiths = new FamilyGroup([dad, mum]);
+// theSmiths.addMember(annie);
+// theSmiths.addMember(will);
+// console.log(theSmiths);
