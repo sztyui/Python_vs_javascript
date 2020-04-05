@@ -108,3 +108,109 @@ const d = {
 const e = {a, b, c};
 
 console.log(e.c);
+
+
+function objectBuilder(x, y, z, numTimes){
+    const allObjects = [];
+    for(let i = 0; i < numTimes; i++){
+        allObjects.push({x, y, z})
+    }
+    return allObjects;
+}
+
+const bob = objectBuilder(10, "bob", false, 3);
+const { x: bobID } = bob;
+console.log(bobID);
+
+// Computed property keys:
+
+const myID = 1;
+const idParam = "userID";
+const computedObj = {
+    [idParam + "_" + myID]: "0123456",
+};
+
+console.log(computedObj.userID_1);
+
+function getFirst(word){
+    return word.charAt(0);
+}
+
+function getRest(word){
+    return word.slice(1);
+}
+
+function capitalizer(word){    
+    return getFirst(word).toUpperCase() + getRest(word).toLowerCase();
+}
+
+const obj111 = {
+    [capitalizer("hello")]: "something",
+    [capitalizer("ALLCAPS")]: "anything",
+}
+
+function dataFormat(arr){
+    const formattedObj = {};
+    for(const prop of arr){
+        formattedObj["userID" + prop.x] = prop;
+    }
+    return formattedObj;
+}
+
+// console.log(dataFormat(bob));
+
+// Map object
+/*
+    -- Used for simple key/value pairs.
+    -- Any value can be used for either a key or value(i.e object, string, function)
+    -- Reasons for using map over object:
+        - Object prototype has default key that might confilct with own keys
+        - Key of map can be anything whereas with objects, have to be string of symbol
+        - Can easily get the size of Map
+*/
+
+const myMap = new Map()
+const firstKey = "key2";
+const firstVal = "first value :D";
+const secondKey = {};
+const thirdKey = () => {};
+const fourthKey = () => {};
+
+myMap.set(firstKey, firstVal);
+myMap.set(secondKey, "AnotherBoringValue");
+myMap.set(thirdKey, "Valami");
+myMap.set("key", "value");
+myMap.set("anotherKey", "anotherValue");
+myMap.set("anotherKeyTwo", "anotherValueAgain");
+
+myMap.delete(thirdKey);
+
+// for (const [key, value] of myMap.entries()){
+//     console.log(`${key} => ${value}`);
+// }
+
+const myMapData = [["keyA", "value one"], ["keyB", "value two"]];
+const anotherMap = new Map(myMapData);
+console.log(anotherMap);
+
+// Set object
+/*
+    - Lets you store unique values of any type
+    - Each element is unique
+    - 
+*/
+
+const exampleArr = [1,1,1,2,3,4,5,5,5,5];
+const mySet = new Set(exampleArr);
+mySet.add("Bob");
+mySet.add(true);
+mySet.add(true);
+console.log(mySet);
+
+const arrFromSet = Array.from(mySet);
+arrFromSet.push(1,2 ,3);
+console.log(arrFromSet);
+
+const exampleSentence = "Hello there!";
+const myExampleSet = new Set(exampleSentence);
+console.log(myExampleSet);
